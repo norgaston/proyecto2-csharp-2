@@ -231,7 +231,7 @@ namespace SistemaGestion
                 producto.RealizarEscaneo();
                 // Quitar la selección del producto en el datagrid
                 dataGridView1.ClearSelection();
-             }
+            }
             else
             {
                 // Manejar el caso cuando el objeto es nulo
@@ -244,7 +244,7 @@ namespace SistemaGestion
             Producto teslaConMasKm = null;
             int maxKilometros = 0;
             // Recorrer la lista para obtener el Tesla con más kilómetros
-            foreach (Producto producto in productos) 
+            foreach (Producto producto in productos)
             {
                 if (producto is TeslaModelX || producto is TeslaModelS || producto is TeslaCybertruck)
                 {
@@ -383,6 +383,7 @@ namespace SistemaGestion
             textBoxAño.Name = "textBoxAño";
             textBoxAño.Size = new Size(151, 31);
             textBoxAño.TabIndex = 9;
+            textBoxAño.KeyPress += textBoxAño_KeyPress;
             // 
             // label2
             // 
@@ -399,6 +400,7 @@ namespace SistemaGestion
             textBoxUnidadDeUSo.Name = "textBoxUnidadDeUSo";
             textBoxUnidadDeUSo.Size = new Size(151, 31);
             textBoxUnidadDeUSo.TabIndex = 11;
+            textBoxUnidadDeUSo.KeyPress += textBoxUnidadDeUSo_KeyPress;
             // 
             // textBoxColor
             // 
@@ -547,6 +549,22 @@ namespace SistemaGestion
             ((System.ComponentModel.ISupportInitialize)spaceXFalcon9BindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void textBoxAño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar el carácter ingresado si no es un dígito!!
+            }
+        }
+
+        private void textBoxUnidadDeUSo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar el carácter ingresado si no es un dígito!!
+            }
         }
     }
 }

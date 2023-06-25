@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gaston\\Documents\\UPSO\\2023\\PROGRAMACIÓN C#.NET\\Proyectos\\SistemaGestion\\SistemaGestion\\SistemaGestion.csproj": {}
+    "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gaston\\Documents\\UPSO\\2023\\PROGRAMACIÓN C#.NET\\Proyectos\\SistemaGestion\\SistemaGestion\\SistemaGestion.csproj": {
+    "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gaston\\Documents\\UPSO\\2023\\PROGRAMACIÓN C#.NET\\Proyectos\\SistemaGestion\\SistemaGestion\\SistemaGestion.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj",
         "projectName": "SistemaGestion",
-        "projectPath": "C:\\Users\\Gaston\\Documents\\UPSO\\2023\\PROGRAMACIÓN C#.NET\\Proyectos\\SistemaGestion\\SistemaGestion\\SistemaGestion.csproj",
-        "packagesPath": "C:\\Users\\Gaston\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gaston\\Documents\\UPSO\\2023\\PROGRAMACIÓN C#.NET\\Proyectos\\SistemaGestion\\SistemaGestion\\obj\\",
+        "projectPath": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj",
+        "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gaston\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

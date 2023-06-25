@@ -16,3 +16,21 @@ C:\Users\Gaston\Documents\UPSO\2023\Primer Cuatrimestre\Programación C#.NET\Pro
 C:\Users\Gaston\Documents\UPSO\2023\Primer Cuatrimestre\Programación C#.NET\Proyecto2V2\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.pdb
 C:\Users\Gaston\Documents\UPSO\2023\Primer Cuatrimestre\Programación C#.NET\Proyecto2V2\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.genruntimeconfig.cache
 C:\Users\Gaston\Documents\UPSO\2023\Primer Cuatrimestre\Programación C#.NET\Proyecto2V2\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\ref\SistemaGestion.dll
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\bin\Debug\net6.0-windows\SistemaGestion.exe
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\bin\Debug\net6.0-windows\SistemaGestion.deps.json
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\bin\Debug\net6.0-windows\SistemaGestion.runtimeconfig.json
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\bin\Debug\net6.0-windows\SistemaGestion.dll
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\bin\Debug\net6.0-windows\SistemaGestion.pdb
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.csproj.AssemblyReference.cache
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.Form1.resources
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.Properties.Resources.resources
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.csproj.GenerateResource.cache
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.AssemblyInfoInputs.cache
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.AssemblyInfo.cs
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.dll
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\refint\SistemaGestion.dll
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.pdb
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\SistemaGestion.genruntimeconfig.cache
+C:\Users\Pablo\Source\Repos\proyecto2-csharp-2\SistemaGestion\obj\Debug\net6.0-windows\ref\SistemaGestion.dll
