@@ -86,6 +86,16 @@ namespace SistemaGestion
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = productos;
+
+            // Centrar el texto en el titulo y celdas del datagrid
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            // Quita las "miniceldas" vacías a la izquierda de cada fila
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.BackgroundColor = dataGridView1.DefaultCellStyle.BackColor;
+
+
             // Establecer todas las columnas del DataGridView como de solo lectura
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
@@ -551,6 +561,7 @@ namespace SistemaGestion
             PerformLayout();
         }
 
+        // Control del tipo de datos en los textbox al agregar un producto
         private void textBoxAño_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
