@@ -82,37 +82,37 @@ namespace SistemaGestion
                 // Se contempla el eventual caso en que el service no coincida con ningun chequeo (como si ocurre el el falcon 9) 
                 if ((servi < cinturones) && (servi < baterias) && (servi < nav) && (servi < traccion) && (servi < motor))
                 {
-                    servicio += "   Sin necesidad de Chequeos extras \n";
+                    servicio += " No se efectuaron chequeos extras \n";
                 }
                 // Verificar si se debe realizar el control de cinturones de seguridad
                 if (servi >= cinturones)
                 {
                     cinturones = cinturones + 1000;
-                    servicio += "   Control Cinturones de Seguridad: OK \n";
+                    servicio += " (1) Control Cinturones de Seguridad: OK \n";
                 }
                 // Verificar si se debe realizar el control de baterías
                 if (servi >= baterias)
                 {
                     baterias = baterias + 2000;
-                    servicio += "   Control de Baterias: OK \n";
+                    servicio += " (2) Control de Baterías: OK \n";
                 }
                 // Verificar si se debe realizar el control de sistema de navegación
                 if (servi >= nav)
                 {
                     nav = nav + 2500;
-                    servicio += "   Control del Sistema de Navegacion: OK \n";
+                    servicio += " (4) Control del Sistema de Navegación: OK \n";
                 }
                 // Verificar si se debe realizar el control de sistema de tracción
                 if (servi >= traccion)
                 {
                     traccion = traccion + 3000;
-                    servicio += "   Control del Sistema de Traccion: OK \n";
+                    servicio += " (5) Control del Sistema de Tracción: OK \n";
                 }
                 // Verificar si se debe realizar el control de motor
                 if (servi >= motor)
                 {
                     motor = motor + 3000;
-                    servicio += "   Control del motor: OK \n";
+                    servicio += " (6) Control del Motor: OK \n";
                 }
                 servi += this.Service;
                 serviciosRealizados.Add(servicio);
@@ -123,11 +123,11 @@ namespace SistemaGestion
 
             if (cantidadServices < 1)
             {
-                mensaje = "Aun no es necesario realizar ningun service \n";
+                mensaje = "No se alcanzaron los kilómetros para realizar el service.\n";
             }
             else
             {
-                mensaje += "Servicios Realizados:\n";
+                mensaje += "\nServicios Realizados:\n\n";
 
                 for (int i = 0; i < serviciosRealizados.Count; i++)
                 {
@@ -216,20 +216,20 @@ namespace SistemaGestion
                 // En el falcon 9 el primer service es a los 400, pero no se checkea ni propulsion ni navegacion
                 if ((servi < nav) && (servi < prop))
                 {
-                    servicio += "   Sin necesidad de Chequeos extras \n";
+                    servicio += " No se efectuaron chequeos extras\n";
                 }
 
                 // Verificar si se debe realizar el control del sistema de propulsión
                 if ((servi) >= prop)
                 {
                     prop = prop + 1000;
-                    servicio += "   Control del Sistema de Propulsion: OK  \n";
+                    servicio += " (3) Control del Sistema de Propulsión: OK  \n";
                 }
                 // Verificar si se debe realizar el control del sistema de navegación
                 if ((servi) >=  nav )
                 {
                     nav = nav + 500; 
-                    servicio += "   Control del Sistema de Navegacion: OK  \n";
+                    servicio += " (4) Control del Sistema de Navegación: OK  \n";
                 }
 
                 servi += this.Service;
@@ -237,26 +237,16 @@ namespace SistemaGestion
                 serviciosRealizados.Add(servicio);
             }
 
-            //// Construir el mensaje de resultado
-            //string mensaje = $"Cantidad de services realizados para {this.GetType().Name}: {cantidadServices}\n";
-            //mensaje += "Servicios Realizados:\n";
-
-            //for (int i = 0; i < serviciosRealizados.Count; i++)
-            //{
-            //    mensaje += serviciosRealizados[i] + "\n";
-            //}
-
-            //return mensaje;
             // Construir el mensaje de resultado
             string mensaje = $"Cantidad de services realizados para {Modelo}: {cantidadServices}\r\n";
 
             if (cantidadServices < 1)
             {
-                mensaje = "Aun no es necesario realizar ningun service \n";
+                mensaje = "No se alcanzaron las horas de vuelo para realizar el service.\n";
             }
             else
             {
-                mensaje += "Servicios Realizados:\n";
+                mensaje += "\nServicios Realizados:\n\n";
 
                 for (int i = 0; i < serviciosRealizados.Count; i++)
                 {

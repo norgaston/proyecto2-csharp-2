@@ -86,7 +86,11 @@ namespace SistemaGestion
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = productos;
-
+            // Establecer todas las columnas del DataGridView como de solo lectura
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.ReadOnly = true;
+            }
             // Para que no tenga ninguna fila marcada por defecto
             dataGridView1.ClearSelection();
         }
