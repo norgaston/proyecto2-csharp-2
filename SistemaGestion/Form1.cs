@@ -42,6 +42,8 @@ namespace SistemaGestion
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             productos = new List<Producto>();
             Load += Form1_Load;
         }
