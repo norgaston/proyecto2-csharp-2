@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SistemaGestion
 {
-    // Clase base abstracta para representar un producto
+    /// <summary>
+    /// Clase base abstracta para representar el producto
+    /// </summary>
     public abstract class Producto
     {
         // Propiedades comunes a todos los productos
@@ -18,7 +20,9 @@ namespace SistemaGestion
         public int Autonomia { get; set; }
         public int Service { get; set; }
 
-        // Propiedad calculada para obtener el porcentaje de carga restante
+        /// <summary>
+        /// Propiedad calculada para obtener el porcentaje de carga restante
+        /// </summary>
         public double CargaRestante
         {
             get
@@ -28,16 +32,18 @@ namespace SistemaGestion
 
                 if (modulo == Autonomia)
                     return 100;
-
-                // Calcula el porcentaje de carga restante redondeado a 2 decimales
+                ///<return>Calcula el porcentaje de carga restante redondeado a 2 decimales</return>
                 return Math.Round((double)modulo / Autonomia * 100, 2);
             }
         }
-
-        // Método abstracto para obtener información específica del producto
+        /// <summary>
+        /// Método abstracto para obtener información específica del producto
+        /// </summary>
         public abstract string ObtenerInformacion();
 
-        // Método virtual para realizar el escaneo del producto
+        /// <summary>
+        /// Método virtual para realizar el escaneo del producto
+        /// </summary>
         public virtual void RealizarEscaneo()
         {
             // Lógica de escaneo común a todos los productos
@@ -50,15 +56,21 @@ namespace SistemaGestion
             // Mostrar el resultado en un popup
             MessageBox.Show(resultado, "Resultado del escaneo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        // Método abstracto para obtener el resultado del escaneo específico del producto
+        /// <summary>
+        /// Método abstracto para obtener el resultado del escaneo específico del producto
+        /// </summary>
         protected abstract string ObtenerResultadoEscaneo();
     }
 
-    // Clase base abstracta para los productos Tesla
+    /// <summary>
+    /// Clase base abstracta para los productos Tesla
+    /// </summary>
     public abstract class TeslaBase : Producto
     {
-        // Implementación del método abstracto para obtener el resultado del escaneo de un producto Tesla
+        /// <summary>
+        /// Implementación del método abstracto para obtener el resultado del escaneo de un producto Tesla
+        /// </summary>
+        ///<returns>string con todos los controles correspondientes</returns>
         protected override string ObtenerResultadoEscaneo()
         {
             int cantidadServices = this.UnidadDeUso / this.Service;
@@ -138,8 +150,9 @@ namespace SistemaGestion
             return mensaje;
         }
     }
-
-    // Clase concreta que representa el modelo Tesla Model X
+    /// <summary>
+    /// Clase concreta que representa el modelo Tesla Model X
+    /// </summary>
     public class TeslaModelX : TeslaBase
     {
         public TeslaModelX()
@@ -150,15 +163,17 @@ namespace SistemaGestion
         }
 
         public int Asientos { get; set; } = 7;
-
-        // Implementación del método para obtener información específica del Tesla Model X
+        /// <summary>
+        /// Implementación del método para obtener información específica del Tesla Model X
+        /// </summary>
         public override string ObtenerInformacion()
         {
             return $" Producto: Tesla Model X\n\n Año: {Año}\n Kilometraje: {UnidadDeUso} km\n Color: {Color}\n Dueño: {Dueño}\n Asientos: {Asientos}\n Autonomia: {Autonomia} km\n Service: cada {Service} km\n Batería restante: {CargaRestante} %";
         }
     }
-
-    // Clase concreta que representa el modelo Tesla Model S
+    /// <summary>
+    /// Clase concreta que representa el modelo Tesla Model S
+    /// </summary>
     public class TeslaModelS : TeslaBase
     {
         public TeslaModelS()
@@ -169,15 +184,17 @@ namespace SistemaGestion
         }
 
         public int Asientos { get; set; } = 5;
-
-        // Implementación del método para obtener información específica del Tesla Model S
+        /// <summary>
+        /// Implementación del método para obtener información específica del Tesla Model S
+        /// </summary>
         public override string ObtenerInformacion()
         {
             return $" Producto: Tesla Model S\n\n Año: {Año}\n Kilometraje: {UnidadDeUso} km\n Color: {Color}\n Dueño: {Dueño}\n Asientos: {Asientos}\n Autonomia: {Autonomia} km\n Service: cada {Service} km\n Batería restante: {CargaRestante} %";
         }
     }
-
-    // Clase concreta que representa el modelo Tesla Cybertruck
+    /// <summary>
+    /// Clase concreta que representa el modelo Tesla Cybertruck
+    /// </summary>
     public class TeslaCybertruck : TeslaBase
     {
         public TeslaCybertruck()
@@ -188,18 +205,23 @@ namespace SistemaGestion
         }
 
         public int Asientos { get; set; } = 6;
-
-        // Implementación del método para obtener información específica del Tesla Cybertruck
+        /// <summary>
+        /// Implementación del método para obtener información específica del Tesla Cybertruck
+        /// </summary>
         public override string ObtenerInformacion()
         {
             return $" Producto: Tesla Cybertruck\n\n Año: {Año}\n Kilometraje: {UnidadDeUso} km\n Color: {Color}\n Dueño: {Dueño}\n Asientos: {Asientos}\n Autonomia: {Autonomia} km\n Service: cada {Service} km\n Batería restante: {CargaRestante} %";
         }
     }
-
-    // Clase base abstracta para los productos SpaceX
+    /// <summary>
+    /// Clase base abstracta para los productos SpaceX
+    /// </summary>
     public abstract class SpaceXBase : Producto
     {
-        // Implementación del método abstracto para obtener el resultado del escaneo de un producto SpaceX
+        /// <summary>
+        /// Implementación del método abstracto para obtener el resultado del escaneo de un producto SpaceX
+        /// </summary>
+        ///<returns>string con todos los controles correspondientes</returns>
         protected override string ObtenerResultadoEscaneo()
         {
             int cantidadServices = this.UnidadDeUso / this.Service;
@@ -257,8 +279,9 @@ namespace SistemaGestion
             return mensaje;
         }
     }
-
-    // Clase concreta que representa la SpaceX Starship
+    /// <summary>
+    /// Clase concreta que representa la SpaceX Starship
+    /// </summary>
     public class SpaceXStarship : SpaceXBase
     {
         public SpaceXStarship()
@@ -267,15 +290,17 @@ namespace SistemaGestion
             Autonomia = 500;
             Service = 1000;
         }
-
-        // Implementación del método para obtener información específica de la SpaceX Starship
+        /// <summary>
+        /// Implementación del método para obtener información específica de la SpaceX Starship
+        /// </summary>
         public override string ObtenerInformacion()
         {
             return $" Producto: SpaceX Starship\n\n Año: {Año}\n Horas de vuelo: {UnidadDeUso} hs\n Color: {Color}\n Dueño: {Dueño}\n Autonomia: {Autonomia} hs\n Service: cada {Service} hs\n Combustible restante: {CargaRestante} %";
         }
     }
-
-    // Clase concreta que representa la SpaceX Falcon 9
+    /// <summary>
+    /// Clase concreta que representa la SpaceX Falcon 9
+    /// </summary>
     public class SpaceXFalcon9 : SpaceXBase
     {
         public SpaceXFalcon9()
@@ -284,8 +309,9 @@ namespace SistemaGestion
             Autonomia = 200;
             Service = 400;
         }
-
-        // Implementación del método para obtener información específica de la SpaceX Falcon 9
+        /// <summary>
+        /// Implementación del método para obtener información específica de la SpaceX Falcon 9
+        /// </summary>
         public override string ObtenerInformacion()
         {
             return $" Producto: SpaceX Falcon 9\n\n Año: {Año}\n Horas de vuelo: {UnidadDeUso} hs\n Color: {Color}\n Dueño: {Dueño}\n Autonomia: {Autonomia} hs\n Service: cada {Service} hs\n Combustible restante: {CargaRestante} %";

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj": {}
+    "C:\\Users\\Pablo\\source\\repos\\proyectiLAultima\\SistemaGestion\\SistemaGestion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj": {
+    "C:\\Users\\Pablo\\source\\repos\\proyectiLAultima\\SistemaGestion\\SistemaGestion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\source\\repos\\proyectiLAultima\\SistemaGestion\\SistemaGestion.csproj",
         "projectName": "SistemaGestion",
-        "projectPath": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\SistemaGestion.csproj",
+        "projectPath": "C:\\Users\\Pablo\\source\\repos\\proyectiLAultima\\SistemaGestion\\SistemaGestion.csproj",
         "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pablo\\Source\\Repos\\proyecto2-csharp-2\\SistemaGestion\\obj\\",
+        "outputPath": "C:\\Users\\Pablo\\source\\repos\\proyectiLAultima\\SistemaGestion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
