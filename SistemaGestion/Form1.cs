@@ -69,7 +69,6 @@ namespace SistemaGestion
             productos.Add(new SpaceXStarship() { Modelo = "SpaceX Starship", Año = 2023, Color = "Plateado", Dueño = "NASA", UnidadDeUso = 4000 });
             productos.Add(new SpaceXFalcon9() { Modelo = "SpaceX Falcon 9", Año = 2022, Color = "Rojo", Dueño = "Apple", UnidadDeUso = 2200 });
 
-
             // Mostrar los productos en el ListBox
             MostrarProductosEnLista();
 
@@ -93,16 +92,38 @@ namespace SistemaGestion
             dataGridView1.BorderStyle = BorderStyle.None;
             // Quita las "miniceldas" vacías a la izquierda de cada fila
             dataGridView1.RowHeadersVisible = false;
+            // Quita la franja gris al final del datagrid
             dataGridView1.BackgroundColor = dataGridView1.DefaultCellStyle.BackColor;
 
 
-            // Establecer todas las columnas del DataGridView como de solo lectura
+            // Para que no tenga ninguna fila marcada por defecto
+            dataGridView1.ClearSelection();
+            // Le cambio el nombre al header del datagrid
+            FormatearHeader();
+            // Establecer todas las columnas del DataGridView como de solo lectura y deshabilitar el cambio de tamaño
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 column.ReadOnly = true;
+                column.Resizable = DataGridViewTriState.False;
             }
-            // Para que no tenga ninguna fila marcada por defecto
-            dataGridView1.ClearSelection();
+            // Deshabilitar el cambio de tamaño de todas las filas del DataGridView
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Resizable = DataGridViewTriState.False;
+            }
+        }
+
+        private void FormatearHeader()
+        {
+            // Asignar los nombres a las columnas del DataGridView
+            Modelo.HeaderText = "Modelo";
+            añoDataGridViewTextBoxColumn.HeaderText = "Año";
+            unidadDeUsoDataGridViewTextBoxColumn.HeaderText = "Kilómetros/Horas de vuelo";
+            colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            dueñoDataGridViewTextBoxColumn.HeaderText = "Dueño";
+            autonomiaDataGridViewTextBoxColumn.HeaderText = "Autonomía (Km/Hs)";
+            serviceDataGridViewTextBoxColumn.HeaderText = "Service (Km/Hs)";
+            cargaRestanteDataGridViewTextBoxColumn.HeaderText = "Batería/Combustible restante (%)";
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -183,41 +204,61 @@ namespace SistemaGestion
                     int rowIndex = dataGridView1.SelectedRows[0].Index;
                     if (rowIndex != -1)
                     {
-                        productos.RemoveAt(rowIndex);
-                        MostrarProductosEnLista();
-                        MessageBox.Show("Tesla eliminado correctamente.");
+                        string modelo = dataGridView1.Rows[rowIndex].Cells["Modelo"].Value.ToString();
+
+                        if (modelo.StartsWith("Tesla"))
+                        {
+                            productos.RemoveAt(rowIndex);
+                            MostrarProductosEnLista();
+                            MessageBox.Show("Tesla eliminado correctamente.");
+                        }
+                        else if (modelo.StartsWith("SpaceX"))
+                        {
+                            productos.RemoveAt(rowIndex);
+                            MostrarProductosEnLista();
+                            MessageBox.Show("SpaceX eliminado correctamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo determinar el tipo de producto.");
+                        }
+
                         // Restablecer el objeto "producto" a nulo para que al escanear sin seleccionar tome este resultado
                         producto = null;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Selecciona un Tesla para eliminar.");
+                    MessageBox.Show("Selecciona un Tesla o SpaceX para eliminar.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay Teslas o SpaceX en la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnTeslaMasKm_Click(object sender, EventArgs e)
+        {
+            if (productos.Count > 0)
+            {
+                Producto teslaConMasKm = ObtenerTeslaConMasKilometros();
+                if (teslaConMasKm != null)
+                {
+                    MessageBox.Show(teslaConMasKm.ObtenerInformacion());
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún Tesla en la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("No hay Teslas en la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            dataGridView1.ClearSelection();
         }
 
-        private void BtnTeslaMasKm_Click(object sender, EventArgs e)
-        {
-            ResaltarTeslaConMasKm();
-        }
-
-        private void ResaltarTeslaConMasKm()
-        {
-            Producto teslaConMasKm = ObtenerTeslaConMasKilometros();
-            if (teslaConMasKm != null)
-            {
-                MessageBox.Show(teslaConMasKm.ObtenerInformacion());
-            }
-            else
-            {
-                MessageBox.Show("No se encontró ningún Tesla en la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void LstProductos_MouseClick(object sender, MouseEventArgs e)
         {
@@ -253,18 +294,31 @@ namespace SistemaGestion
         {
             Producto teslaConMasKm = null;
             int maxKilometros = 0;
+            int rowIndex = -1; // Variable para almacenar el índice de la fila a resaltar
+
             // Recorrer la lista para obtener el Tesla con más kilómetros
-            foreach (Producto producto in productos)
+            for (int i = 0; i < productos.Count; i++)
             {
+                Producto producto = productos[i];
                 if (producto is TeslaModelX || producto is TeslaModelS || producto is TeslaCybertruck)
                 {
                     if (producto.UnidadDeUso > maxKilometros)
                     {
                         maxKilometros = producto.UnidadDeUso;
                         teslaConMasKm = producto;
+                        rowIndex = i; // Guardar el índice de la fila a resaltar
                     }
                 }
             }
+
+            if (rowIndex != -1)
+            {
+                // Resaltar la fila correspondiente al Tesla con más kilómetros
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[rowIndex].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = rowIndex;
+            }
+
             return teslaConMasKm;
         }
 
